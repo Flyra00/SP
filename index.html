@@ -135,30 +135,41 @@
             z-index: 6;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 10px;
             margin-bottom: 18px;
             opacity: 0;
             animation: fadeDown 0.75s ease forwards 0.2s;
         }
 
-        .logo {
-            width: clamp(46px, 13vw, 58px);
-            aspect-ratio: 1;
-            display: grid;
-            place-items: center;
-            border-radius: 999px;
+        .logo-frame {
+            width: clamp(50px, 13vw, 62px);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            background: var(--cream);
             border: 3px solid rgba(255, 241, 220, 0.96);
-            background: radial-gradient(circle at 50% 46%, #f7c45f 0 27%, #284a7d 28% 41%, #f1af23 42% 57%, #bb3f16 58% 100%);
             box-shadow: 0 9px 18px rgba(86, 39, 5, 0.22);
-            color: white;
-            font-size: 0.56rem;
-            font-weight: 1000;
-            letter-spacing: 0.05em;
-            text-align: center;
         }
 
-        .logo:nth-child(2) {
-            background: radial-gradient(circle at 50% 50%, #f0b935 0 25%, #161b2e 26% 42%, #27a46b 43% 49%, #10192e 50% 100%);
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .logo-img--pst {
+            transform: scale(1.16);
+        }
+
+        .logo-img--ipp {
+            transform: scale(1.02);
         }
 
         .poster-top {
@@ -974,8 +985,13 @@
     <main class="page" aria-label="Undangan Spirit Pastulas">
         <section class="hero" aria-labelledby="hero-title">
             <div class="logo-row" aria-label="Logo acara">
-                <div class="logo" aria-hidden="true">LOGO</div>
-                <div class="logo" aria-hidden="true">LOGO</div>
+                <div class="logo-frame logo-frame--pst">
+                    <img src="./LOGO/PST.jpeg" alt="Logo PST" class="logo-img logo-img--pst" />
+                </div>
+
+                <div class="logo-frame logo-frame--ipp">
+                    <img src="./LOGO/IPP.jpeg" alt="Logo IPP" class="logo-img logo-img--ipp" />
+                </div>
             </div>
 
             <div class="poster-top">
